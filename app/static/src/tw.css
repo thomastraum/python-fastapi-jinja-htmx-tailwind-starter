@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.maximized-column {
+    @apply w-full absolute inset-0 z-10 bg-gray-700;
+  }
+  
+
+@font-face {
+    font-family: "helvetica";
+    font-style: normal;
+    font-weight: 100 200 300 400 500 900;
+    font-display: optional;
+    src: url("/static/fonts/helveticaneue-bold.woff2") format("woff2"), 
+         url("/static/fonts/helveticaneue-bold.woff") format("woff");
+}

@@ -1,0 +1,61 @@
+<!-- font-helvetica font-normal -->
+<html class="h-full bg-white helvetica font-bold">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>{{ page_title }}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/main.css') }}"
+      type="text/css"
+    />
+    <meta name="description" content="{{ page_description }}" />
+    <!-- Facebok Open Graph: https://developers.facebook.com/docs/sharing/opengraph -->
+    <meta property="og:site_name" content="Renderer App" />
+    <meta property="og:type" content="Renderer App" />
+    <meta property="og:title" content="Renderer App - Home" />
+    <meta property="og:description" content="keep rendering" />
+    <!-- <meta property="og:url" content="https://wwww.example.com" /> -->
+    <link
+      rel="shortcut icon"
+      sizes="180x180"
+      href="{{url_for('static', path='favicon/apple-touch-icon.png')}}"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', path='favicon/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', path='favicon/favicon-16x16.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{{ url_for('static', path='favicon/android-chrome-192x192.png') }}"
+    />
+    <script src="{{url_for('static', path='js/htmx.min.js')}}"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+    {# <script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script> #}
+  </head>
+  <body 
+    class="h-screen"    
+
+   >
+    {# {% block header %} {% include "/shared/_header.html" %} {% endblock %} #}
+    <div class="mx-auto px-4 h-[90vh]">
+      {% block content %} your stuff here {% endblock %}
+    </div>
+    {% block footer %} {% include "/shared/_footer.html" %} {% endblock %} 
+    {% if DEBUG %} {{ hot_reload.script(url_for('hot-reload')) | safe }} {% endif %}
+  </body>
+</html>
