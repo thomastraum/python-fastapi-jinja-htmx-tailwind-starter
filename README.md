@@ -1,4 +1,4 @@
-# basic skeleton
+# python-fastapi-jinja-htmx-tailwind-starter
 
 `python3.10 -m venv .venv`
 
@@ -14,7 +14,7 @@ python -m app.main
 tailwindcss -i ./app/static/src/tw.css -o ./app/static/css/main.css --watch
 ```
 
-you need to add an env file
+you need to add an ".env" file
 
 ```
 HOST=0.0.0.0
